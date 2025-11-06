@@ -1,4 +1,8 @@
 import { Module } from '@nestjs/common';
-
-@Module({})
+import { MongooseModule } from '@nestjs/mongoose';
+@Module({
+  imports: [
+    MongooseModule.forRoot('mongodb://localhost/microservices-backend'),
+  ],
+})
 export class DatabaseModule {}
