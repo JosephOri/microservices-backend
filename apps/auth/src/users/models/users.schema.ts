@@ -7,6 +7,6 @@ export class UserDocument extends AbstractDocument {
   email: string;
 
   @Prop()
-  passwoed: string;
+  password: string;
 }
 export const UserSchema = SchemaFactory.createForClass(UserDocument);
