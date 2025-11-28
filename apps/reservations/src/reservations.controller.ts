@@ -53,4 +53,9 @@ export class ReservationsController {
   remove(@Param('id') id: string) {
     return this.reservationsService.remove(id);
   }
+
+  @Get('health/check')
+  healthCheck() {
+    return { status: 'ok' };
+  }
 }
