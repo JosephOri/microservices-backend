@@ -50,7 +50,7 @@ steps:
     'me-west1-docker.pkg.dev/microservices-backend/payments/production',
   ]
 
-# Notifications
+# notifications
 - name: 'gcr.io/cloud-builders/docker'
   args: [
    'build',
