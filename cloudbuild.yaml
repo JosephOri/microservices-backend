@@ -1,5 +1,5 @@
 steps:
-# reservations 
+# Reservations 
 - name: 'gcr.io/cloud-builders/docker'
   args: [
    'build',
@@ -16,7 +16,7 @@ steps:
     'me-west1-docker.pkg.dev/microservices-backend/reservations/production',
   ]
 
-# auth
+# Auth
 - name: 'gcr.io/cloud-builders/docker'
   args: [
    'build',
@@ -33,7 +33,7 @@ steps:
     'me-west1-docker.pkg.dev/microservices-backend/auth/production',
   ]
 
-# payments
+# Payments
 - name: 'gcr.io/cloud-builders/docker'
   args: [
    'build',
@@ -50,7 +50,7 @@ steps:
     'me-west1-docker.pkg.dev/microservices-backend/payments/production',
   ]
 
-# notifications
+# Notifications
 - name: 'gcr.io/cloud-builders/docker'
   args: [
    'build',
