@@ -1,0 +1,70 @@
+steps:
+# reservations 
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+   'build',
+    '-t',
+    'me-west1-docker.pkg.dev/microservices-backend/reservations/production',
+    '-f',
+    'apps/reservations/Dockerfile',
+    '.'
+  ]
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+   'push',
+    'me-west1-docker.pkg.dev/microservices-backend/reservations/production',
+  ]
+
+# auth
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+   'build',
+    '-t',
+    'me-west1-docker.pkg.dev/microservices-backend/auth/production',
+    '-f',
+    'apps/auth/Dockerfile',
+    '.'
+  ]
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+   'push',
+    'me-west1-docker.pkg.dev/microservices-backend/auth/production',
+  ]
+
+# payments
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+   'build',
+    '-t',
+    'me-west1-docker.pkg.dev/microservices-backend/payments/production',
+    '-f',
+    'apps/payments/Dockerfile',
+    '.'
+  ]
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+   'push',
+    'me-west1-docker.pkg.dev/microservices-backend/payments/production',
+  ]
+
+# notifications
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+   'build',
+    '-t',
+    'me-west1-docker.pkg.dev/microservices-backend/notifications/production',
+    '-f',
+    'apps/notifications/Dockerfile',
+    '.'
+  ]
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+   'push',
+    'me-west1-docker.pkg.dev/microservices-backend/notifications/production',
+  ]
+
+
