@@ -17,4 +17,23 @@ spec:
       containers:
       - image: me-west1-docker.pkg.dev/microservices-backend/notifications/production
         name: notifications
+        env:
+        - name: PORT
+          value: "3000"
+        - name: GOOGLE_OAUTH_CLIENT_ID
+          value: 771757296416-9b5l2k6vdfikmso8776l6nj41uon5g12.apps.googleusercontent.com
+        - name: SMTP_USER
+          value: josephori30@gmail.com
+        - name: GOOGLE_OAUTH_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: google
+              key: clientSecret
+        - name: GOOGLE_OAUTH_REFRESH_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: google
+              key: refreshToken
+        ports:
+        - containerPort: 3000
 
