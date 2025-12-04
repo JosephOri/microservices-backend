@@ -46,4 +46,8 @@ services:
     volumes:
       - .:/usr/src/app
   mongo:
-    image: mongo:noble
+    image: mongo:8.2.2-noble
+  rabbitmq:
+    image: rabbitmq:4-alpine
+    ports:
+      - "5672:5672"
